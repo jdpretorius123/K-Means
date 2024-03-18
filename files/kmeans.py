@@ -13,7 +13,6 @@ from typing import TextIO
 from cluster import Cluster
 from kernel import Mismatch, Spectrum
 from sequence import Sequence
-# from file import FastaFile
 
 STATS = dict[str, tuple[float, int]]
 
@@ -194,18 +193,3 @@ class Kmeans:
         self._writeStats(path)
         file.write("\n")
         file.close()
-
-
-# infile: str = "kmeans/kmeans.fasta"
-# ff: FastaFile = FastaFile(infile)
-# seqs: list[Sequence] = ff.getSequences()
-# size: int = 3
-# name: str = "SPECTRUM KERNEL"
-# kmers: list[str] = ff.findKmers(size)
-# kernel: Spectrum = Spectrum(kmers, size, name)
-# k: int = 4
-# kmeans: Kmeans = Kmeans(seqs, kernel, k)
-# limit: int = 10
-# kmeans.execute(limit)
-# outfile: str = "kmeans/kmeans.txt"
-# kmeans.write(outfile)
